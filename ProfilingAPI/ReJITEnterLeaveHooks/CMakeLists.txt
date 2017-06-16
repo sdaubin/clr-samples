@@ -28,7 +28,7 @@ if(${WIN32})
   add_compile_options(
     -fPIC
     -fms-extensions
-    -std=c++14
+    -std=c++11
   )
 else()
   add_compile_options(
@@ -36,14 +36,13 @@ else()
     -Wno-invalid-noreturn
     -fPIC
     -fms-extensions
-    -std=c++14
-    -stdlib=libc++
-    -latomic
+    -std=c++11
     -w
   )
 endif()
 file(GLOB SOURCES
-  "dllmain.cpp"
+  "*.h"
+  "*.cpp"
 )
 
 add_library(${Output} SHARED ${SOURCES})
